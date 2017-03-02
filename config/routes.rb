@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # get 'parks/index'
-  # get 'parks/:id', to: 'parks/show'
+  # get 'parks/:id', to: 'parks#show'
   # get 'welcome/index'
 
   resources :parks
