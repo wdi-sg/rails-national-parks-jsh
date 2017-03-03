@@ -1,0 +1,11 @@
+<div class="container">
+
+<h1>New park</h1>
+
+<%= bootstrap_form_for(@new_park, layout: :horizontal) do |f|%>
+  <%= f.text_field :name , labe:'Park name', placeholder:'Enter park name', control_col: 'col-md-4'%>
+  <%= f.text_field :description, skip_label: true , control_col: 'col-md-4'%>
+  <%= f.text_field :photo, help:"Please enter valid url", icon:"user", control_col: 'col-md-4'%>
+  <%= f.primary "Submit" , control_col: 'col-md-4'%>
+<% end %>
+</div>

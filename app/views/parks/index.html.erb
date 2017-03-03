@@ -1,4 +1,15 @@
 <h1>Park Items</h1>
-<%@parks.each do |item|%>
-<pre><%=item.inspect%>></pre>
-<%end%>
+<p>
+  <%= link_to "Home", root_path, class:"btn btn-primary"%>
+  <%= link_to "New Park", new_park_path, class:"btn btn-primary"%>
+</p>
+<div class="row">
+  <%@parks.each_with_index do |park, item|%>
+  <div class="col-md-4">
+    <pre><%=park.inspect%>></pre>
+    <%= image_tag(park.photo)%>
+    <%= link_to park.name, park_path(park.id), class:"btn btn-primary"%>
+    <!-- <img src="<%=park.photo%>" alt=""> -->
+  </div>
+  <%end%>
+</div>

@@ -1,2 +1,13 @@
 <h1>The Park Item</h1>
-<pre><%=@parks%></pre>
+<pre><%=@park%></pre>
+
+<h1>One Park <%= @park.name %></h1>
+<p>
+  <%= link_to "Home", root_path, class:"btn btn-primary"%>
+</p>
+<div class="row">
+  <div class="col-md-4">
+    <pre><%=@park.inspect%>></pre>
+    <%= image_tag(@park.photo)%>
+  </div>
+</div>
