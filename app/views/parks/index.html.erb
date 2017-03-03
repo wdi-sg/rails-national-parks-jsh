@@ -9,6 +9,7 @@
     <pre><%=park.inspect%>></pre>
     <%= image_tag(park.photo)%>
     <%= link_to park.name, park_path(park.id), class:"btn btn-primary"%>
+    <%= link_to 'Edit', edit_park_path(park.id), class:"btn btn-primary"%>
     <!-- <img src="<%=park.photo%>" alt=""> -->
   </div>
   <%end%>

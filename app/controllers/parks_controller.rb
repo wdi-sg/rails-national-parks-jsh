@@ -42,12 +42,27 @@ class ParksController < ApplicationController
 
   def edit
     #getting an exisiting park
+    @edit_park = Park.find(params[:id])
 
   end
 
   def update
     # send the edit request
     # find an exisiting park object with id from form data
+
+    @edit_park = Park.update(params[:id], park_params)
+
+    if @edit_park.save
+      respond_to do |format|
+        format.html { redirect_to parks_path }
+        format.json { render json: { status: 200, message: 'OK'} }
+      end
+
+    else
+      #code
+      render 'edit'
+    end
+
   end
 
   def destroy

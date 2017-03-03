@@ -2,10 +2,12 @@
 
 <h1>Edit park</h1>
 
-<%= bootstrap_form_for(@new_park, layout: :horizontal, inline_errors: true) do |f|%>
-  <%= f.text_field :name , labe:'Park name', placeholder:'Enter park name', control_col: 'col-md-4'%>
+<%= bootstrap_form_for(@edit_park, method: "put", layout: :horizontal, inline_errors: true) do |f|%>
+
+  <%= f.text_field :name , label:'Park name', placeholder:'Enter park name', control_col: 'col-md-4'%>
   <%= f.text_field :description, control_col: 'col-md-4'%>
   <%= f.text_field :photo, icon:"user", control_col: 'col-md-4'%>
   <%= f.primary "Submit"%>
+
 <% end %>
 </div>
