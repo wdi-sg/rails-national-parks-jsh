@@ -25,14 +25,38 @@ class ParksController < ApplicationController
   end
 
   def create
+    # byebug
+    @new_park = Park.new(park_params)
+
+    if @new_park.save
+      respond_to do |format|
+        format.html {redirect_to parks_path}
+        format.json { render json: {status: 200, message: 'OK'} }
+      end
+
+    else
+      render 'new'
+    end
+
   end
 
   def edit
+    #getting an exisiting park
+
   end
 
   def update
+    # send the edit request
+    # find an exisiting park object with id from form data
   end
 
   def destroy
+  end
+
+
+  private
+
+  def park_params
+    params.require(:park).permit(:name, :description, :photo)
   end
 end
