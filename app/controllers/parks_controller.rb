@@ -46,8 +46,11 @@ class ParksController < ApplicationController
   end
 
   def update
-    # send the edit request
+    #send the edit request (hint: not post method)
     # find an exisiting park object with id from form data
+    #save the updated park object
+    #if can save, redirect to parks parks_path
+    #else render the edit page
   end
 
   def destroy
